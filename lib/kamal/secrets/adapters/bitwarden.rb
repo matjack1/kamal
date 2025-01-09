@@ -1,4 +1,8 @@
 class Kamal::Secrets::Adapters::Bitwarden < Kamal::Secrets::Adapters::Base
+  def requires_account?
+    false
+  end
+
   private
     def login(account)
       status = run_command("status")
